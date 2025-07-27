@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Copy-Cut by ONIK</title>
+    <style>
+        body {
+            width: 480px;
+            padding: 20px;
+            margin: 0;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffffff, #ffffff);
+            color: #333;
+        }
+
+        .header {
+            font-size: 17px;
+            font-weight: 600;
+            text-align: center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            padding: 14px 20px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            border: none;
+            color: #fff;
+            padding: 14px 28px;
+            text-align: center;
+            display: block;
+            font-size: 15px;
+            margin: 12px auto;
+            cursor: pointer;
+            border-radius: 50px;
+            width: 90%;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .button-danger {
+            background: linear-gradient(135deg, #ff4e50, #ffd500);
+        }
+
+        .button-danger:hover {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        }
+
+        .status {
+            margin-top: 20px;
+            padding: 14px 20px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .status.success {
+            border-left: 5px solid #00c851;
+            color: #007e33;
+        }
+
+        .status.error {
+            border-left: 5px solid #ff3547;
+            color: #cc0000;
+        }
+
+        .status.info {
+            border-left: 5px solid #33b5e5;
+            color: #0099cc;
+        }
+
+        .status i {
+            font-size: 18px;
+        }
+
+        .preview {
+            margin-top: 18px;
+            padding: 14px 16px;
+            background: rgba(255, 250, 250, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            max-height: 150px;
+            overflow-y: auto;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .preview strong {
+            color: #6a11cb;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Copy-Cut
+    </div>
+
+    <button id="resetClipboard" class="button button-danger">
+         Reset Clipboard
+    </button>
+
+    <div id="status" class="status info">
+        <i>ℹ️</i> Auto-copy is active. Select checkboxes to copy Cust IDs.
+    </div>
+
+    <div id="preview" class="preview" style="display: none;">
+        <strong>Preview:</strong><br>
+        <span id="previewText"></span>
+    </div>
+
+    <div id="preview" class="preview" style="display: none;">
+        <strong>Preview:</strong><br>
+        <span id="previewText"></span>
+    </div>
+
+    <div class="footer">
+        Developed by Sabbir Khan Oni
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
